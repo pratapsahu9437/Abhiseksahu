@@ -37,19 +37,4 @@ font-size:45px;
 margin-top:20px;
 }
 
-h3{
-color:#ff2d55;
-margin:10px 0;
-}
-
-section{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
-
-.card{
-background:#1b1b1b;
-padding:25px;
-border-radius:15px;
-margin-bottom
+h

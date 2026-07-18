@@ -159,9 +159,9 @@ I create high-quality cinematic edits and social media content.
 
 <h2>Contact</h2>
 
-<p>Email: your@email.com</p>
+<p>Email: pratapsahu9437@gmail.com</p>
 <p>Instagram: @abhi_cenes</p>
-<p>WhatsApp: +91 XXXXXXXXXX</p>
+<p>WhatsApp: +91 7328037028</p>
 
 </div>
 

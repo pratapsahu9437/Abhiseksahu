@@ -1,177 +1,2131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek Sahu | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+    <title>Abhisek Sahu | Video Editor</title>
 
-body{
-background:#0d0d0d;
-color:white;
-}
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-header{
-text-align:center;
-padding:60px 20px;
-background:linear-gradient(135deg,#111,#1f1f1f);
-}
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-img{
-width:180px;
-height:180px;
-border-radius:50%;
-border:4px solid #ff2d55;
-object-fit:cover;
-}
+    <style>
 
-h1{
-font-size:45px;
-margin-top:20px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-h3{
-color:#ff2d55;
-margin:10px 0;
-}
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #020b1d;
+            color: white;
+            overflow-x: hidden;
+        }
 
-section{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
+        /* ---------- BACKGROUND ---------- */
 
-.card{
-background:#1b1b1b;
-padding:25px;
-border-radius:15px;
-margin-bottom:25px;
-}
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00aeff;
+            filter: blur(180px);
+            opacity: 0.08;
+            top: -200px;
+            left: -200px;
+            z-index: -1;
+        }
 
-.card h2{
-color:#ff2d55;
-margin-bottom:15px;
-}
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #008cff;
+            filter: blur(180px);
+            opacity: 0.07;
+            bottom: -200px;
+            right: -200px;
+            z-index: -1;
+        }
 
-.skills span{
-display:inline-block;
-padding:10px 18px;
-margin:8px;
-background:#ff2d55;
-border-radius:30px;
-}
+        /* ---------- NAVBAR ---------- */
 
-.button{
-display:inline-block;
-padding:14px 30px;
-background:#ff2d55;
-color:white;
-text-decoration:none;
-border-radius:30px;
-margin-top:20px;
-}
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
 
-footer{
-text-align:center;
-padding:20px;
-background:#111;
-margin-top:30px;
-}
-</style>
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
+            padding: 0 7%;
+
+            background: rgba(5, 19, 38, 0.82);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            color: #05aeff;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #c8d0dc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #08b4ff;
+        }
+
+        .hire-btn {
+            background: linear-gradient(135deg, #00aaff, #0095ff);
+            padding: 15px 30px;
+            border-radius: 35px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 0 25px rgba(0,170,255,.25);
+            transition: .3s;
+        }
+
+        .hire-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(0,170,255,.45);
+        }
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 70px;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .small-title {
+            color: #05aeff;
+            letter-spacing: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #04aeff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 25px auto;
+            color: #aeb8c8;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .outline-btn {
+            border: 1px solid #08aeff;
+            color: #08aeff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .outline-btn:hover {
+            background: #08aeff;
+            color: white;
+        }
+
+        /* ---------- SECTION ---------- */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: #00aeff;
+            letter-spacing: 5px;
+            font-weight: 600;
+        }
+
+        .section-title h2 {
+            font-size: clamp(35px, 5vw, 55px);
+            margin-top: 10px;
+        }
+
+        /* ---------- ABOUT ---------- */
+
+        .about {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .about h2 span {
+            color: #08aeff;
+        }
+
+        .about p {
+            color: #adb7c6;
+            line-height: 2;
+            font-size: 17px;
+        }
+
+        /* ---------- STATS ---------- */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .stat-card {
+            background: rgba(18, 35, 56, .7);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 28px;
+            padding: 55px 25px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: .3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,174,255,.4);
+        }
+
+        .stat-card h3 {
+            font-size: 55px;
+            color: #05aeff;
+        }
+
+        .stat-card p {
+            color: #d4d9e1;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* ---------- SERVICES ---------- */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 45px 30px;
+            border-radius: 25px;
+            text-align: center;
+
+            background: rgba(17, 33, 53, .72);
+            border: 1px solid rgba(255,255,255,.08);
+
+            transition: .35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00aeff;
+            box-shadow: 0 15px 50px rgba(0,174,255,.08);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: auto auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 20px;
+
+            color: #00aeff;
+            font-size: 30px;
+
+            background: rgba(0,174,255,.08);
+            border: 1px solid rgba(0,174,255,.3);
+        }
+
+        .service-card h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #aab4c3;
+            line-height: 1.8;
+        }
+
+        /* ---------- PORTFOLIO ---------- */
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .project {
+            overflow: hidden;
+            border-radius: 25px;
+
+            background: rgba(18, 34, 55, .75);
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .video-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #000;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #aeb7c5;
+            line-height: 1.7;
+        }
+
+        /* ---------- CONTACT ---------- */
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: rgba(18,35,56,.72);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 25px;
+            padding: 40px;
+        }
+
+        .contact-info h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h2 span {
+            color: #00aeff;
+        }
+
+        .contact-info > p {
+            color: #aeb8c5;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .contact-item i {
+            color: #00aeff;
+            font-size: 25px;
+            width: 30px;
+        }
+
+        .contact-item div {
+            color: #dce1e8;
+        }
+
+        .contact-item small {
+            display: block;
+            color: #8490a1;
+            margin-bottom: 3px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 17px 18px;
+            margin-bottom: 18px;
+
+            border: 1px solid rgba(255,255,255,.08);
+            outline: none;
+            border-radius: 15px;
+
+            background: rgba(255,255,255,.04);
+            color: white;
+
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #00aeff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            background: linear-gradient(135deg,#00aaff,#008dff);
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            color: #788394;
+        }
+
+        footer span {
+            color: #00aeff;
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media(max-width: 800px) {
+
+            header {
+                padding: 0 5%;
+                height: 70px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .hire-btn {
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .stats,
+            .services,
+            .portfolio,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about h2 {
+                font-size: 38px;
+            }
+
+            .stat-card {
+                padding: 40px 20px;
+            }
+
+            .portfolio {
+                gap: 25px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 28px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <header>
 
-<img src="profile.jpg" alt="Profile">
+    <div class="logo">
+        AB<span>HI.</span>
+    </div>
 
-<h1>Abhishek Sahu</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<h3>B.Tech AIML Student | Professional Video Editor</h3>
-
-<p>I create cinematic edits, Instagram reels, YouTube videos and motion graphics.</p>
-
-<a class="button" href="https://instagram.com/abhi_cenes" target="_blank">Instagram</a>
+    <a href="#contact" class="hire-btn">
+        Hire Me
+    </a>
 
 </header>
 
-<section>
 
-<div class="card">
-<h2>About Me</h2>
+<!-- ================= HERO ================= -->
 
-<p>
-I am a passionate video editor with experience in
-After Effects, DaVinci Resolve and CapCut.
-I create high-quality cinematic edits and social media content.
-</p>
+<section class="hero" id="home">
 
-</div>
+    <div class="hero-content">
 
-<div class="card">
+        <div class="small-title">
+            VIDEO EDITOR & CREATOR
+        </div>
 
-<h2>Skills</h2>
+        <h1>
+            Who <span>Am I?</span>
+        </h1>
 
-<div class="skills">
+        <p>
+            Hi, I'm <strong>Abhisek Sahu</strong>, a passionate
+            video editor creating engaging short-form content,
+            reels and social media videos.
+        </p>
 
-<span>After Effects</span>
-<span>DaVinci Resolve</span>
-<span>CapCut</span>
-<span>Photoshop</span>
-<span>Python</span>
-<span>C Programming</span>
+        <div class="hero-buttons">
 
-</div>
+            <a href="#portfolio" class="hire-btn">
+                View My Work
+            </a>
 
-</div>
+            <a href="#contact" class="outline-btn">
+                Contact Me
+            </a>
 
-<div class="card">
+        </div>
 
-<h2>Services</h2>
-
-<p>Instagram Reels</p>
-<p>YouTube Editing</p>
-<p>Short Form Videos</p>
-<p>Cinematic Editing</p>
-<p>Motion Graphics</p>
-
-</div>
-
-<div class="card">
-
-<h2>Pricing</h2>
-
-<p>Instagram Reel: ₹700</p>
-<p>YouTube Video: ₹1000</p>
-
-</div>
-
-<div class="card">
-
-<h2>Contact</h2>
-
-<p>Email: pratapsahu9437@gmail.com</p>
-<p>Instagram: @abhi_cenes</p>
-<p>WhatsApp: +91 7328037028</p>
-
-</div>
+    </div>
 
 </section>
 
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <small>ABOUT ME</small>
+
+        <h2>
+            Creative <span style="color:#00aeff;">Video Editor</span>
+        </h2>
+
+    </div>
+
+    <div class="about">
+
+        <p>
+            I specialize in short-form video editing, social media
+            reels and engaging visual storytelling. My goal is to
+            transform raw footage into content that looks professional,
+            keeps viewers engaged and communicates the story effectively.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>1.5+</h3>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>50+</h3>
+            <p>Projects Edited</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>Client Satisfaction</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <small>SERVICES</small>
+
+        <h2>
+            What I <span style="color:#00aeff;">Do</span>
+        </h2>
+
+    </div>
+
+    <div class="services">
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <h3>Instagram Reels</h3>
+
+            <p>
+                Professional and engaging Instagram Reels
+                with captions, effects and smooth transitions.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <h3>YouTube Shorts</h3>
+
+            <p>
+                Fast-paced Shorts editing with subtitles,
+                sound effects and engaging visual cuts.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-film"></i>
+            </div>
+
+            <h3>Social Media Edit</h3>
+
+            <p>
+                Modern social media editing with strong
+                sound design, effects and storytelling.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <h3>Cinematic Editing</h3>
+
+            <p>
+                Cinematic edits with professional pacing,
+                color grading and visual effects.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-closed-captioning"></i>
+            </div>
+
+            <h3>Captions & Subtitles</h3>
+
+            <p>
+                Clean animated captions designed to
+                improve viewer retention.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <h3>Sound Design</h3>
+
+            <p>
+                Music, sound effects and audio enhancement
+                for a more immersive video.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PORTFOLIO ================= -->
+
+<section id="portfolio">
+
+    <div class="section-title">
+
+        <small>MY WORK</small>
+
+        <h2>
+            Featured <span style="color:#00aeff;">Projects</span>
+        </h2>
+
+    </div>
+
+
+    <div class="portfolio">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb1.jpg">
+
+                    <source src="assets/video1.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Instagram Reel</h3>
+
+                <p>
+                    Short-form social media edit with
+                    captions, transitions and sound design.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb2.jpg">
+
+                    <source src="assets/video2.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>YouTube Short</h3>
+
+                <p>
+                    Fast-paced storytelling edit designed
+                    for audience retention.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb3.jpg">
+
+                    <source src="assets/video3.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Social Media Edit</h3>
+
+                <p>
+                    Modern edit with sound effects,
+                    animations and engaging visuals.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb4.jpg">
+
+                    <source src="assets/video4.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Cinematic Edit</h3>
+
+                <p>
+                    Cinematic storytelling with color grading
+                    and professional transitions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <small>CONTACT</small>
+
+        <h2>
+            Let's <span style="color:#00aeff;">Work Together</span>
+        </h2>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <div class="contact-info">
+
+            <h2>
+                Let's create something <span>great.</span>
+            </h2>
+
+            <p>
+                Have a video project in mind?
+                Contact me and let's discuss your requirements.
+            </p>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+                    <small>Email</small>
+                    YOUR_EMAIL@gmail.com
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-brands fa-instagram"></i>
+
+                <div>
+                    <small>Instagram</small>
+                    @YOUR_USERNAME
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+                    <small>Phone</small>
+                    +91 XXXXX XXXXX
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form class="contact-form"
+              onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required>
+
+            <textarea
+                id="message"
+                placeholder="Write your message..."
+                required></textarea>
+
+            <button class="submit-btn" type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<p>© 2026 Abhishek Sahu | Portfolio</p>
+    © 2026 <span>Abhisek Sahu</span>.
+    All Rights Reserved.
 
 </footer>
+
+
+<script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const message =
+        document.getElementById("message").value;
+
+
+    const whatsappNumber = "91XXXXXXXXXX";
+
+
+    const text =
+        `Hello Abhisek,%0A%0A` +
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A%0A` +
+        `Message: ${message}`;
+
+
+    window.open(
+        `https://wa.me/${whatsappNumber}?text=${text}`,
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abhisek Sahu | Video Editor</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #020b1d;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ---------- BACKGROUND ---------- */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00aeff;
+            filter: blur(180px);
+            opacity: 0.08;
+            top: -200px;
+            left: -200px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #008cff;
+            filter: blur(180px);
+            opacity: 0.07;
+            bottom: -200px;
+            right: -200px;
+            z-index: -1;
+        }
+
+        /* ---------- NAVBAR ---------- */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 7%;
+
+            background: rgba(5, 19, 38, 0.82);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            color: #05aeff;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #c8d0dc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #08b4ff;
+        }
+
+        .hire-btn {
+            background: linear-gradient(135deg, #00aaff, #0095ff);
+            padding: 15px 30px;
+            border-radius: 35px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 0 25px rgba(0,170,255,.25);
+            transition: .3s;
+        }
+
+        .hire-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(0,170,255,.45);
+        }
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 70px;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .small-title {
+            color: #05aeff;
+            letter-spacing: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #04aeff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 25px auto;
+            color: #aeb8c8;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .outline-btn {
+            border: 1px solid #08aeff;
+            color: #08aeff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .outline-btn:hover {
+            background: #08aeff;
+            color: white;
+        }
+
+        /* ---------- SECTION ---------- */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: #00aeff;
+            letter-spacing: 5px;
+            font-weight: 600;
+        }
+
+        .section-title h2 {
+            font-size: clamp(35px, 5vw, 55px);
+            margin-top: 10px;
+        }
+
+        /* ---------- ABOUT ---------- */
+
+        .about {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .about h2 span {
+            color: #08aeff;
+        }
+
+        .about p {
+            color: #adb7c6;
+            line-height: 2;
+            font-size: 17px;
+        }
+
+        /* ---------- STATS ---------- */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .stat-card {
+            background: rgba(18, 35, 56, .7);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 28px;
+            padding: 55px 25px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: .3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,174,255,.4);
+        }
+
+        .stat-card h3 {
+            font-size: 55px;
+            color: #05aeff;
+        }
+
+        .stat-card p {
+            color: #d4d9e1;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* ---------- SERVICES ---------- */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 45px 30px;
+            border-radius: 25px;
+            text-align: center;
+
+            background: rgba(17, 33, 53, .72);
+            border: 1px solid rgba(255,255,255,.08);
+
+            transition: .35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00aeff;
+            box-shadow: 0 15px 50px rgba(0,174,255,.08);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: auto auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 20px;
+
+            color: #00aeff;
+            font-size: 30px;
+
+            background: rgba(0,174,255,.08);
+            border: 1px solid rgba(0,174,255,.3);
+        }
+
+        .service-card h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #aab4c3;
+            line-height: 1.8;
+        }
+
+        /* ---------- PORTFOLIO ---------- */
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .project {
+            overflow: hidden;
+            border-radius: 25px;
+
+            background: rgba(18, 34, 55, .75);
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .video-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #000;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #aeb7c5;
+            line-height: 1.7;
+        }
+
+        /* ---------- CONTACT ---------- */
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: rgba(18,35,56,.72);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 25px;
+            padding: 40px;
+        }
+
+        .contact-info h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h2 span {
+            color: #00aeff;
+        }
+
+        .contact-info > p {
+            color: #aeb8c5;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .contact-item i {
+            color: #00aeff;
+            font-size: 25px;
+            width: 30px;
+        }
+
+        .contact-item div {
+            color: #dce1e8;
+        }
+
+        .contact-item small {
+            display: block;
+            color: #8490a1;
+            margin-bottom: 3px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 17px 18px;
+            margin-bottom: 18px;
+
+            border: 1px solid rgba(255,255,255,.08);
+            outline: none;
+            border-radius: 15px;
+
+            background: rgba(255,255,255,.04);
+            color: white;
+
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #00aeff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            background: linear-gradient(135deg,#00aaff,#008dff);
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            color: #788394;
+        }
+
+        footer span {
+            color: #00aeff;
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media(max-width: 800px) {
+
+            header {
+                padding: 0 5%;
+                height: 70px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .hire-btn {
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .stats,
+            .services,
+            .portfolio,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about h2 {
+                font-size: 38px;
+            }
+
+            .stat-card {
+                padding: 40px 20px;
+            }
+
+            .portfolio {
+                gap: 25px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="logo">
+        AB<span>HI.</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="hire-btn">
+        Hire Me
+    </a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            VIDEO EDITOR & CREATOR
+        </div>
+
+        <h1>
+            Who <span>Am I?</span>
+        </h1>
+
+        <p>
+            Hi, I'm <strong>Abhisek Sahu</strong>, a passionate
+            video editor creating engaging short-form content,
+            reels and social media videos.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#portfolio" class="hire-btn">
+                View My Work
+            </a>
+
+            <a href="#contact" class="outline-btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <small>ABOUT ME</small>
+
+        <h2>
+            Creative <span style="color:#00aeff;">Video Editor</span>
+        </h2>
+
+    </div>
+
+    <div class="about">
+
+        <p>
+            I specialize in short-form video editing, social media
+            reels and engaging visual storytelling. My goal is to
+            transform raw footage into content that looks professional,
+            keeps viewers engaged and communicates the story effectively.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>1.5+</h3>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>50+</h3>
+            <p>Projects Edited</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>Client Satisfaction</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <small>SERVICES</small>
+
+        <h2>
+            What I <span style="color:#00aeff;">Do</span>
+        </h2>
+
+    </div>
+
+    <div class="services">
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+            <h3>Instagram Reels</h3>
+
+            <p>
+                Professional and engaging Instagram Reels
+                with captions, effects and smooth transitions.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <h3>YouTube Shorts</h3>
+
+            <p>
+                Fast-paced Shorts editing with subtitles,
+                sound effects and engaging visual cuts.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-film"></i>
+            </div>
+
+            <h3>Social Media Edit</h3>
+
+            <p>
+                Modern social media editing with strong
+                sound design, effects and storytelling.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <h3>Cinematic Editing</h3>
+
+            <p>
+                Cinematic edits with professional pacing,
+                color grading and visual effects.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-closed-captioning"></i>
+            </div>
+
+            <h3>Captions & Subtitles</h3>
+
+            <p>
+                Clean animated captions designed to
+                improve viewer retention.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <h3>Sound Design</h3>
+
+            <p>
+                Music, sound effects and audio enhancement
+                for a more immersive video.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PORTFOLIO ================= -->
+
+<section id="portfolio">
+
+    <div class="section-title">
+
+        <small>MY WORK</small>
+
+        <h2>
+            Featured <span style="color:#00aeff;">Projects</span>
+        </h2>
+
+    </div>
+
+
+    <div class="portfolio">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb1.jpg">
+
+                    <source src="assets/video1.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Instagram Reel</h3>
+
+                <p>
+                    Short-form social media edit with
+                    captions, transitions and sound design.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb2.jpg">
+
+                    <source src="assets/video2.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>YouTube Short</h3>
+
+                <p>
+                    Fast-paced storytelling edit designed
+                    for audience retention.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb3.jpg">
+
+                    <source src="assets/video3.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Social Media Edit</h3>
+
+                <p>
+                    Modern edit with sound effects,
+                    animations and engaging visuals.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="project">
+
+            <div class="video-box">
+
+                <video controls poster="assets/thumb4.jpg">
+
+                    <source src="assets/video4.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video.
+
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3>Cinematic Edit</h3>
+
+                <p>
+                    Cinematic storytelling with color grading
+                    and professional transitions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <small>CONTACT</small>
+
+        <h2>
+            Let's <span style="color:#00aeff;">Work Together</span>
+        </h2>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <div class="contact-info">
+
+            <h2>
+                Let's create something <span>great.</span>
+            </h2>
+
+            <p>
+                Have a video project in mind?
+                Contact me and let's discuss your requirements.
+            </p>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+                    <small>Email</small>
+                    YOUR_EMAIL@gmail.com
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-brands fa-instagram"></i>
+
+                <div>
+                    <small>Instagram</small>
+                    @YOUR_USERNAME
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+                    <small>Phone</small>
+                    +91 XXXXX XXXXX
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form class="contact-form"
+              onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required>
+
+            <textarea
+                id="message"
+                placeholder="Write your message..."
+                required></textarea>
+
+            <button class="submit-btn" type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 <span>Abhisek Sahu</span>.
+    All Rights Reserved.
+
+</footer>
+
+
+<script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const message =
+        document.getElementById("message").value;
+
+
+    const whatsappNumber = "91XXXXXXXXXX";
+
+
+    const text =
+        `Hello Abhisek,%0A%0A` +
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A%0A` +
+        `Message: ${message}`;
+
+
+    window.open(
+        `https://wa.me/${whatsappNumber}?text=${text}`,
+        "_blank"
+    );
+
+}
+
+</script>
 
 </body>
 </html>

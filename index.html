@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,8 +30,6 @@
             color: white;
             overflow-x: hidden;
         }
-
-        /* ---------- BACKGROUND ---------- */
 
         body::before {
             content: "";
@@ -159,20 +158,14 @@
         /* ---------- PROFILE PHOTO ---------- */
 
         .profile-photo {
-            width: 300px;
-            height: 300px;
-            margin: 35px auto;
-            border-radius: 30px;
-            overflow: hidden;
-            border: 2px solid #00aeff;
-            box-shadow: 0 0 35px rgba(0,174,255,0.3);
-        }
-
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
+            width: 280px;
+            height: 280px;
             object-fit: cover;
+            border-radius: 25px;
+            border: 2px solid #00aeff;
+            margin: 30px auto;
             display: block;
+            box-shadow: 0 0 30px rgba(0,174,255,.35);
         }
 
         .hero p {
@@ -526,11 +519,6 @@
                 font-size: 15px;
             }
 
-            .profile-photo {
-                width: 250px;
-                height: 250px;
-            }
-
             section {
                 padding: 75px 5%;
             }
@@ -557,6 +545,11 @@
             .contact-info,
             .contact-form {
                 padding: 28px;
+            }
+
+            .profile-photo {
+                width: 240px;
+                height: 240px;
             }
         }
 
@@ -602,11 +595,10 @@
             Who <span>Am I?</span>
         </h1>
 
-        <!-- PHOTO ADDED HERE -->
-
-        <div class="profile-photo">
-            <img src="assets/photo.jpg" alt="Abhisek Sahu">
-        </div>
+        <!-- YOUR PHOTO -->
+        <img src="Photo.jpg"
+             alt="Abhisek Sahu"
+             class="profile-photo">
 
         <p>
             Hi, I'm <strong>Abhisek Sahu</strong>, a passionate
@@ -693,352 +685,4 @@
 
         <small>SERVICES</small>
 
-        <h2>
-            What I <span style="color:#00aeff;">Do</span>
-        </h2>
-
-    </div>
-
-    <div class="services">
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-
-            <h3>Instagram Reels</h3>
-
-            <p>
-                Professional and engaging Instagram Reels
-                with captions, effects and smooth transitions.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                <i class="fa-brands fa-youtube"></i>
-            </div>
-
-            <h3>YouTube Shorts</h3>
-
-            <p>
-                Fast-paced Shorts editing with subtitles,
-                sound effects and engaging visual cuts.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-film"></i>
-            </div>
-
-            <h3>Social Media Edit</h3>
-
-            <p>
-                Modern social media editing with strong
-                sound design, effects and storytelling.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-
-            <h3>Cinematic Editing</h3>
-
-            <p>
-                Cinematic edits with professional pacing,
-                color grading and visual effects.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-closed-captioning"></i>
-            </div>
-
-            <h3>Captions & Subtitles</h3>
-
-            <p>
-                Clean animated captions designed to
-                improve viewer retention.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                <i class="fa-solid fa-music"></i>
-            </div>
-
-            <h3>Sound Design</h3>
-
-            <p>
-                Music, sound effects and audio enhancement
-                for a more immersive video.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PORTFOLIO ================= -->
-
-<section id="portfolio">
-
-    <div class="section-title">
-
-        <small>MY WORK</small>
-
-        <h2>
-            Featured <span style="color:#00aeff;">Projects</span>
-        </h2>
-
-    </div>
-
-
-    <div class="portfolio">
-
-
-        <!-- PROJECT 1 -->
-
-        <div class="project">
-
-            <div class="video-box">
-
-                <video controls poster="assets/thumb1.jpg">
-
-                    <source src="assets/video1.mp4"
-                            type="video/mp4">
-
-                    Your browser does not support video.
-
-                </video>
-
-            </div>
-
-            <div class="project-info">
-
-                <h3>Instagram Reel</h3>
-
-                <p>
-                    Short-form social media edit with
-                    captions, transitions and sound design.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROJECT 2 -->
-
-        <div class="project">
-
-            <div class="video-box">
-
-                <video controls poster="assets/thumb2.jpg">
-
-                    <source src="assets/video2.mp4"
-                            type="video/mp4">
-
-                    Your browser does not support video.
-
-                </video>
-
-            </div>
-
-            <div class="project-info">
-
-                <h3>YouTube Short</h3>
-
-                <p>
-                    Fast-paced storytelling edit designed
-                    for audience retention.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROJECT 3 -->
-
-        <div class="project">
-
-            <div class="video-box">
-
-                <video controls poster="assets/thumb3.jpg">
-
-                    <source src="assets/video3.mp4"
-                            type="video/mp4">
-
-                    Your browser does not support video.
-
-                </video>
-
-            </div>
-
-            <div class="project-info">
-
-                <h3>Social Media Edit</h3>
-
-                <p>
-                    Modern edit with sound effects,
-                    animations and engaging visuals.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROJECT 4 -->
-
-        <div class="project">
-
-            <div class="video-box">
-
-                <video controls poster="assets/thumb4.jpg">
-
-                    <source src="assets/video4.mp4"
-                            type="video/mp4">
-
-                    Your browser does not support video.
-
-                </video>
-
-            </div>
-
-            <div class="project-info">
-
-                <h3>Cinematic Edit</h3>
-
-                <p>
-                    Cinematic storytelling with color grading
-                    and professional transitions.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
-
-    <div class="section-title">
-
-        <small>CONTACT</small>
-
-        <h2>
-            Let's <span style="color:#00aeff;">Work Together</span>
-        </h2>
-
-    </div>
-
-
-    <div class="contact-container">
-
-
-        <div class="contact-info">
-
-            <h2>
-                Let's create something <span>great.</span>
-            </h2>
-
-            <p>
-                Have a video project in mind?
-                Contact me and let's discuss your requirements.
-            </p>
-
-
-            <div class="contact-item">
-
-                <i class="fa-solid fa-envelope"></i>
-
-                <div>
-                    <small>Email</small>
-                    pratapsahu9437@gmail.com 
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <i class="fa-brands fa-instagram"></i>
-
-                <div>
-                    <small>Instagram</small>
-                    @abhi_cenes
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <i class="fa-solid fa-phone"></i>
-
-                <div>
-                    <small>Phone</small>
-                    +91 7328037028
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <form class="contact-form"
-              onsubmit="sendMessage(event)">
-
-            <input
-                type="text"
-                id="name"
-                placeholder="Your Name"
-                required>
-
-            <input
-                type="email"
-                id="email"
-                placeholder="Your Email"
-                required>
-
-            <textarea
-                id="message"
-                placeholder="Write your message..."
-                required></textarea>
-
-            <button class="submit-btn" type="submit">
-                Send Message
-            </button>
-
-        </form>
-
-   
+        <

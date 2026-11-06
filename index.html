@@ -1,468 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Touquir - Developer & Designer Portfolio</title>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-color: #0b0b0e;
-            --card-bg: #141419;
-            --card-border: #22222c;
-            --accent-color: #e50914;
-            --text-main: #ffffff;
-            --text-muted: #9ca3af;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhisek Sahu | Video Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Navbar */
-        header {
-            padding: 1.5rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--card-border);
-            margin-bottom: 3rem;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: 1px;
-            color: var(--text-main);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
-            padding: 4rem 0;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content h1 span {
-            color: var(--accent-color);
-        }
-
-        .hero-content p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 0.8rem 1.8rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.3s;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        .hero-image {
-            position: relative;
-            background: linear-gradient(145deg, #1f1f29, #111116);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--card-border);
-            height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(20%);
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 4rem 0;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .project-img {
-            height: 200px;
-            background-color: #222;
-            position: relative;
-        }
-
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Skills & Expertise */
-        .skills {
-            padding: 4rem 0;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-category {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .skill-category h4 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .skill-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Experience Timeline */
-        .experience {
-            padding: 4rem 0;
-        }
-
-        .timeline {
-            border-left: 2px solid var(--card-border);
-            padding-left: 1.5rem;
-            margin-left: 0.5rem;
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.85rem;
-            top: 0.3rem;
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-        }
-
-        .timeline-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .timeline-desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 4rem 0 6rem 0;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-        }
-
-        .contact-text h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .contact-text p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .social-link-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            color: var(--text-main);
-            text-decoration: none;
-            transition: border-color 0.3s;
-        }
-
-        .social-link-item:hover {
-            border-color: var(--accent-color);
-        }
-
-        .social-link-item i {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero, .contact {
-                grid-template-columns: 1fr;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
+:root{--yellow:#f5d000;--black:#080808;--dark:#141414;--gray:#aaa}
+body{background:var(--black);color:white}
+nav{position:fixed;top:0;width:100%;z-index:10;background:#080808ed;padding:20px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #252525}
+.logo{font-size:27px;font-weight:900;color:var(--yellow)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:var(--yellow)}
+.menu{display:none;font-size:25px;cursor:pointer}
+section{padding:100px 8%}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:40px;padding-top:130px}
+.hero-content{max-width:650px}
+.tag{color:var(--yellow);letter-spacing:3px;font-size:13px;font-weight:600}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.15;margin:20px 0}
+h1 span,.heading span{color:var(--yellow)}
+.hero p,.subheading{color:var(--gray);line-height:1.8;margin-bottom:30px}
+.btn{display:inline-block;padding:13px 27px;background:var(--yellow);color:black;text-decoration:none;font-weight:700;border-radius:4px}
+.btn:hover{background:white}
+.hero-box{width:320px;height:390px;border:2px solid var(--yellow);display:flex;justify-content:center;align-items:center;background:linear-gradient(145deg,#292929,#080808);color:var(--yellow);font-size:75px;font-weight:900;box-shadow:15px 15px 0 var(--yellow)}
+.heading{font-size:38px;margin-bottom:12px}
+.about{background:var(--dark)}
+.about-content{max-width:850px;color:var(--gray);line-height:1.9}
+.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.skill{border:1px solid var(--yellow);color:var(--yellow);padding:9px 17px;border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card{background:var(--dark);padding:30px;border-bottom:3px solid var(--yellow);transition:.3s}
+.service-card:hover{transform:translateY(-7px)}
+.service-card h3,.project-info h3{color:var(--yellow);margin-bottom:12px}
+.service-card p,.project-info p{color:var(--gray);font-size:14px;line-height:1.7}
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.filter{background:transparent;color:white;border:1px solid #555;padding:9px 20px;cursor:pointer}
+.filter.active,.filter:hover{background:var(--yellow);color:black;border-color:var(--yellow)}
+.project{background:var(--dark);overflow:hidden}
+.project img{width:100%;height:210px;object-fit:cover;display:block}
+.project-info{padding:20px}
+.project a{color:inherit;text-decoration:none}
+.contact{background:var(--dark);text-align:center}
+.contact p{color:var(--gray);margin:15px 0 30px}
+.contact-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+footer{text-align:center;padding:25px;color:var(--gray);font-size:13px}
+footer span{color:var(--yellow)}
+@media(max-width:850px){
+.hero{flex-direction:column;align-items:flex-start}
+.hero-box{width:250px;height:280px}
+.grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+nav ul{display:none;position:absolute;top:70px;left:0;width:100%;background:#111;padding:25px;flex-direction:column}
+nav ul.show{display:flex}
+.menu{display:block}
+.grid{grid-template-columns:1fr}
+section{padding:85px 6%}
+.heading{font-size:30px}
+}
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="logo">TOUQUIR.</div>
-            <ul class="nav-links">
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </header>
+<nav>
+<div class="logo">ABHI.</div>
+<div class="menu" onclick="toggleMenu()">☰</div>
+<ul id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>HELLO, I'M <span>TOUQUIR</span></h1>
-                <p>Developer & Designer crafting exceptional digital products, intuitive user interfaces, and robust web experiences.</p>
-                <a href="#contact" class="btn-primary">Let's Talk</a>
-            </div>
-            <div class="hero-image">
-                <!-- Replace with your profile photo URL -->
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Profile Picture">
-            </div>
-        </section>
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="tag">VIDEO EDITOR & CONTENT CREATOR</div>
+<h1>TURNING IDEAS<br>INTO <span>VISUALS.</span></h1>
+<p>Hey! I'm Abhisek Sahu, a video editor passionate about creating cinematic videos, engaging reels and powerful storytelling through editing.</p>
+<a href="#projects" class="btn">EXPLORE MY WORK →</a>
+</div>
+<div class="hero-box">ABHI</div>
+</section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <h2 class="section-title">Work That Speaks</h2>
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Build Better, Grow Smarter</h3>
-                        <p>Digital marketing platform built for high-performance growth and analytics.</p>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>Pure & Clean</h3>
-                        <p>E-commerce storefront experience focusing on minimalism and smooth conversions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="about" id="about">
+<h2 class="heading">ABOUT <span>ME</span></h2>
+<p class="subheading">A little introduction</p>
+<div class="about-content">
+I'm Abhisek Sahu, a passionate video editor with 2 years of editing experience. I create visually attractive and engaging content for creators and brands.
+<br><br>
+I believe every video has a story. My goal is to make that story memorable through creative editing, smooth transitions, sound design and color grading.
+<div class="skills">
+<div class="skill">DaVinci Resolve</div>
+<div class="skill">CapCut</div>
+<div class="skill">Color Grading</div>
+<div class="skill">Sound Design</div>
+<div class="skill">Motion Graphics</div>
+</div>
+</div>
+</section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <h2 class="section-title">Expertise & Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Design</h4>
-                    <ul class="skill-list">
-                        <li><i class="fa-solid fa-check"></i> UI/UX Wireframing</li>
-                        <li><i class="fa-solid fa-check"></i> Design Systems</li>
-                        <li><i class="fa-solid fa-check"></i> Interaction Design</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Development</h4>
-                    <ul class="skill-list">
-                        <li><i class="fa-solid fa-check"></i> HTML5 / CSS3 / JavaScript</li>
-                        <li><i class="fa-solid fa-check"></i> React & Modern Frameworks</li>
-                        <li><i class="fa-solid fa-check"></i> WordPress & Shopify Customization</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<section id="services">
+<h2 class="heading">MY <span>SERVICES</span></h2>
+<p class="subheading">What I can create for you</p>
+<div class="grid">
+<div class="service-card"><h3>Reels Editing</h3><p>Creative Instagram reels with engaging cuts, effects and transitions.</p></div>
+<div class="service-card"><h3>YouTube Shorts</h3><p>Fast-paced short videos with captions and engaging storytelling.</p></div>
+<div class="service-card"><h3>Long Videos</h3><p>Professional YouTube videos with smooth storytelling and sound design.</p></div>
+<div class="service-card"><h3>Cinematic Editing</h3><p>Cinematic visuals, smooth transitions and professional color grading.</p></div>
+<div class="service-card"><h3>Captions & Subtitles</h3><p>Stylish subtitles and animated captions for social media content.</p></div>
+<div class="service-card"><h3>Sound Design</h3><p>Sound effects, music synchronization and audio enhancement.</p></div>
+</div>
+</section>
 
-        <!-- Experience Timeline -->
-        <section id="experience" class="experience">
-            <h2 class="section-title">Keep Building. Keep Shipping.</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2023 - Present</div>
-                    <div class="timeline-title">Founder & Lead Developer</div>
-                    <div class="timeline-desc">Building scalable web solutions and managing end-to-end digital products.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2021 - 2023</div>
-                    <div class="timeline-title">Freelance Web Designer</div>
-                    <div class="timeline-desc">Designed customized experiences and landing pages for international clients.</div>
-                </div>
-            </div>
-        </section>
+<section id="projects">
+<h2 class="heading">MY <span>PROJECTS</span></h2>
+<p class="subheading">A selection of my editing work</p>
+<div class="filters">
+<button class="filter active" onclick="filterProjects('all',this)">All</button>
+<button class="filter" onclick="filterProjects('short',this)">Short Videos</button>
+<button class="filter" onclick="filterProjects('long',this)">Long Videos</button>
+</div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="contact-text">
-                <h2>Let's Build Together.</h2>
-                <p>Have a project in mind or want to collaborate? Reach out through any of the channels below and let's create something great.</p>
-            </div>
-            <div class="social-links">
-                <a href="mailto:your-email@example.com" class="social-link-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>Email Me</span>
-                </a>
-                <a href="https://github.com/your-username" target="_blank" class="social-link-item">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/your-username" target="_blank" class="social-link-item">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://instagram.com/your-username" target="_blank" class="social-link-item">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-            </div>
-        </section>
+<div class="grid" id="projectGrid">
+<div class="project" data-type="short">
+<a href="videos/video1.mp4" target="_blank">
+<img src="images/thumb1.jpg" alt="Reel">
+<div class="project-info"><h3>Instagram Reel</h3><p>Short-form video editing</p></div>
+</a></div>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Touquir. All rights reserved. Shipped with style.</p>
-        </footer>
-    </div>
+<div class="project" data-type="short">
+<a href="videos/video2.mp4" target="_blank">
+<img src="images/thumb2.jpg" alt="Cinematic reel">
+<div class="project-info"><h3>Cinematic Reel</h3><p>Color grading and transitions</p></div>
+</a></div>
+
+<div class="project" data-type="short">
+<a href="videos/video3.mp4" target="_blank">
+<img src="images/thumb3.jpg" alt="YouTube short">
+<div class="project-info"><h3>YouTube Short</h3><p>Captions and sound design</p></div>
+</a></div>
+
+<div class="project" data-type="long">
+<a href="videos/video4.mp4" target="_blank">
+<img src="images/thumb4.jpg" alt="YouTube video">
+<div class="project-info"><h3>YouTube Video</h3><p>Long-form video editing</p></div>
+</a></div>
+
+<div class="project" data-type="long">
+<a href="videos/video5.mp4" target="_blank">
+<img src="images/thumb5.jpg" alt="Documentary">
+<div class="project-info"><h3>Documentary Edit</h3><p>Storytelling and sound design</p></div>
+</a></div>
+
+<div class="project" data-type="long">
+<a href="videos/video6.mp4" target="_blank">
+<img src="images/thumb6.jpg" alt="Podcast">
+<div class="project-info"><h3>Podcast Edit</h3><p>Professional long-form editing</p></div>
+</a></div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2 class="heading">LET'S <span>WORK TOGETHER</span></h2>
+<p>Have a project in mind? Let's create something amazing.</p>
+<div class="contact-links">
+<a class="btn" href="mailto:sahueditz@gmail.com">EMAIL ME</a>
+<a class="btn" href="https://instagram.com/abhi_cenes" target="_blank">INSTAGRAM</a>
+<a class="btn" href="https://wa.me/7328037028" target="_blank">WHATSAPP</a>
+</div>
+</section>
+
+<footer>
+© 2026 <span>Abhisek Sahu</span>. All Rights Reserved.
+</footer>
+
+<script>
+function toggleMenu(){
+ document.getElementById("navLinks").classList.toggle("show");
+}
+function filterProjects(type,button){
+ document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ document.querySelectorAll(".project").forEach(project=>{
+  project.style.display=(type==="all"||project.dataset.type===type)?"block":"none";
+ });
+}
+</script>
 
 </body>
 </html>
